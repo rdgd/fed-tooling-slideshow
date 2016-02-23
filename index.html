@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1024" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>NodeJS</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="impress">
+
+    <div id="intro" class="step text-center" data-x="-5200" data-y="-4300" data-z="-500" data-rotate-x="0" data-rotate-y="0" data-scale="2">
+      <p>A brief introduction to...</p>
+    </div>
+
+    <div id="node" class="step text-center" data-x="-4200" data-y="-3300" data-z="-400" data-rotate-x="-40" data-rotate-y="-10" data-scale="2">
+      <p>
+        <img src="assets/images/node-logo.png">
+      </p>
+    </div>
+
+    <div id="npm" class="step text-center" data-x="-3200" data-y="-3300" data-z="-300" data-rotate-x="-80" data-rotate-y="-20" data-scale="2">
+      <p>
+        <img src="assets/images/npm-logo.png">
+      </p>
+    </div>
+
+    <div id="grunt" class="step text-center" data-x="-2200" data-y="-2300" data-z="-200" data-rotate-x="-120" data-rotate-y="-30" data-scale="2">
+      <p>
+        <img src="assets/images/grunt-logo.png">
+      </p>
+    </div>
+
+    <div id="bower" class="step text-center" data-x="-1200" data-y="-1300" data-z="-100" data-rotate-x="-160" data-rotate-y="-40" data-scale="2">
+      <p>
+        <img src="assets/images/bower-logo.png">
+      </p>
+    </div>
+
+    <div class="step slide" data-x="0" data-y="-1500">
+      <h1>
+        The point of it all
+      </h1>
+      The advent of Node and the maturation of Javascript as a language and
+      its community is:
+      <ul>
+        <li>
+          Making front-end development more interesting, fun, and efficient
+        </li>
+        <li>
+          Providing front-end-specific package/dependency management where there once was none
+        </li>
+        <li>
+          Encouraging layered architecture
+        </li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="1000" data-y="-1500">
+      <h1>
+        This presentation is NOT
+      </h1>
+      <ul>
+        <li>Suggesting we use JS to do Java or Ruby's jobs</li>
+        <li>About JS running on an application server at all</li>
+        <li>Me trying to convert you to JS evangelists</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="2000" data-y="-1500">
+      <h1>
+        This presentation IS
+      </h1>
+      <ul>
+        <li>Hoping to ignite some curiousity about JS</li>
+        <li>
+          Five parts
+          <ol>
+            <li>Recommending a discreet front end</li>
+            <li>Intro to Node</li>
+            <li>Intro to NPM</li>
+            <li>Intro to Bower</li>
+            <li>Intro to GruntJS</li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+
+    <div id="preach" class="step" data-x="3500" data-y="-1500" data-z="0" data-rotate-x="0" data-rotate-y="0" data-scale="1">
+      <q class="text-center">
+        When I hear a man preach, I like to see him act as if he were fighting bees.
+      </q>
+      <p class="text-right">
+        - Abraham Lincoln
+      </p>
+    </div>
+
+    <div class="step slide" data-x="3500" data-y="-500">
+      <h1>
+        Front End-ependence
+      </h1>
+      <ul>
+        <li>
+          Adaptable to changes in the rest of the stack
+        </li>
+        <li>
+          We have the technology/tooling to facilitate this
+        </li>
+        <li>
+          Don't burden front-end devs or your future selves
+        </li>
+        <li>
+          Promotes:
+          <ul>
+            <li>
+              Creating a client/device agnostic, reusable API
+            </li>
+            <li>
+              A fundamental, technological separation of presentation and application layers' concerns
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <span id="end-rant">/rant</span>
+    </div>
+
+    <div id="node-again" class="step text-center" data-x="5000" data-y="-1500" data-z="0" data-rotate-x="0" data-rotate-y="0" data-scale="1">
+      <p>
+        <img src="assets/images/node-logo.png">
+      </p>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="-500">
+      <h1>
+        What is NodeJS?
+      </h1>
+      <q>Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.</q>
+      <ul>
+        <li>
+          Open source and cross-platform
+        </li>
+        <li>
+          Event driven (EventEmitter API)
+        </li>
+        <li>
+          Single threaded
+        </li>
+        <li>
+          Non-blocking I/O
+        </li>
+        <li>
+          Uses <a href="https://github.com/libuv/libuv" title="libuv">libuv</a> under the hood which manages queueing, the event loop, workers, thread pooling, mem alloc, etc...
+        </li>
+        <li>
+          Includes NPM
+        </li>
+        <li>
+          Checkout the <a href="https://nodejs.org/en/" title="Node JS">NodeJS</a> website
+        </li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="500" data-gif-path="assets/images/node-installed-1.gif">
+      <h1>
+        Installing Node
+      </h1>
+      <ol>
+        <li>
+          Go to <a href="https://nodejs.org/en/download/" title="Node Download">https://nodejs.org/en/download/</a>
+        </li>
+        <li>
+          Download and run installer.
+        </li>
+        <li>
+        </li>
+      </ol>
+      <div id="install-node-gif-wrap" class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="1500" data-gif-path="assets/images/basic-node-commands.gif">
+      <h1>
+        Basic interpreting and interactive shell
+      </h1>
+      <div class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div id="npm-again" class="step text-center" data-x="6500" data-y="-1500" data-z="0" data-rotate-x="0" data-rotate-y="0" data-scale="1">
+      <p>
+        <img src="assets/images/npm-logo.png">
+      </p>
+    </div>
+
+    <div class="step slide" data-x="6500" data-y="-500">
+      <h1>
+        What is NPM?
+      </h1>
+      <q>Installs, publishes and manages node programs</q>
+      <ul>
+        <li>
+          <strong>N</strong>ode <strong>P</strong>ackage <strong>M</strong>anager
+        </li>
+        <li>
+          Uses
+          <a href="https://github.com/npm/node-semver" title="SemVer parser">
+            SemVer
+          </a>
+          (~, ^, =, <, >, <=, >=)
+        </li>
+        <li>
+          <a href="https://www.npmjs.com/" title="NPM">NPM</a> hosts the world's largest repository of modules, in any language
+          <ul>
+            <li>Filesystem traversal & manipulation</li>
+            <li>Executing shell scripts & commands</li>
+            <li>Web application frameworks</li>
+            <li>Webservers, process managers, load balancers, etc...</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="6500" data-y="500" data-gif-path="assets/images/global-package-install.gif">
+      <h1>
+        Global Packages
+      </h1>
+      <div class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div class="step slide" data-x="6500" data-y="1500" data-gif-path="assets/images/local-package-install.gif">
+      <h1>
+        Local Packages
+      </h1>
+      <ul>
+        <li>
+          Installs sub-dependencies flat until conflict, then nests
+        </li>
+      </ul>
+      <div class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div class="step slide" data-x="6500" data-y="2500" data-gif-path="assets/images/dependency-injection-1.gif">
+      <h1>
+        Dependency Injection
+      </h1>
+      <ul>
+        <li>Node knows to look in node_modules directory</li>
+        <li>You can also specify a path to a file</li>
+      </ul>
+      <div class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div class="step slide" data-x="6500" data-y="3500" data-gif-path="assets/images/dependency-injection-2.gif">
+      <h1>
+        Dependency Injection Cont.
+      </h1>
+      <ol>
+        <li>Is it a "core" module (http, fs, etc...)?</li>
+        <li>Is it in local node_modules dir?</li>
+        <li>Traverse upwards to global packages dir</li>
+      </ul>
+      <div id="dep-injection-2-wrapper" class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div id="grunt-again" class="step text-center" data-x="8000" data-y="-1500" data-z="0" data-rotate-x="0" data-rotate-y="0" data-scale="1">
+      <p>
+        <img src="assets/images/grunt-logo.png">
+      </p>
+    </div>
+
+    <div class="step slide" id="grunt-getting-started" data-x="8000" data-y="-500">
+      <h1>
+        What is Grunt?
+      </h1>
+      <q>The Javascript Task Runner</q>
+      <ul>
+        <li>
+          Built on Node
+        </li>
+        <li>
+          <a href="http://gruntjs.com/" title="Grunt">Grunt</a>
+          competes with
+          <a href="http://gulpjs.com/" title="Gulp">Gulp</a>
+        </li>
+        <li>
+          Automates your tasks so you don't have to
+          <ul>
+            <li>Compilation</li>
+            <li>Minification</li>
+            <li>Compression</li>
+            <li>Testing and Static analysis</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="8000" data-y="500" data-gif-path="assets/images/grunt-getting-started.gif">
+      <h1>
+        Getting Started
+      </h1>
+      <div class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div class="step slide" data-x="8000" data-y="1500" data-gif-path="assets/images/grunt-initial-config.gif">
+      <h1>
+        Configuration
+      </h1>
+      <div class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div class="step slide" data-x="8000" data-y="2500" data-gif-path="assets/images/grunt-usage-examples.gif">
+      <h1>
+        Usage Examples
+      </h1>
+      <div class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div id="bower-again" class="step text-center" data-x="9500" data-y="-1500" data-z="0" data-rotate-x="0" data-rotate-y="0" data-scale="1">
+      <p>
+        <img src="assets/images/bower-logo.png">
+      </p>
+    </div>
+
+    <div class="step slide" data-x="9500" data-y="-500">
+      <h1>
+        What is Bower?
+      </h1>
+      <q>A package manager for the web</q>
+      <ul>
+        <li>
+          Built on Node
+        </li>
+        <li>
+          Package manifest
+        </li>
+        <li>
+          Distinct from NPM
+        </li>
+        <li>
+          Bower manages consumables for browsers
+        </li>
+        <li>
+          Check out the <a href="http://bower.io/" title="Bower">Bower website</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="9500" data-y="500" data-gif-path="assets/images/bower-getting-started.gif">
+      <h1>
+        Getting started
+      </h1>
+      <div class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div class="step slide" data-x="9500" data-y="1500" data-gif-path="assets/images/bower-basic-usage.gif">
+      <h1>
+        Basic Usage
+      </h1>
+      <div class="lice-cap-wrap">
+      </div>
+    </div>
+
+    <div id="questions" class="step" data-x="2500" data-y="1500" data-scale="15">
+      <h1>Questions?</h1>
+    </div>
+  </div>
+
+  <script src="bower_components/impress.js/js/impress.js"></script>
+  <script>
+  impress().init();
+
+  window.onload = function () {
+    document.addEventListener('impress:stepenter', function (e) {
+      var slide = e.target;
+      var gifWrap = slide.querySelector('.lice-cap-wrap');
+      var existingImg = gifWrap.querySelector('.lice-cap-gif');
+      var imgPath = slide.getAttribute('data-gif-path');
+      var gif = document.createElement('img');
+
+      if (imgPath === null) { return false; }
+      if (existingImg) {
+        // Clear image if already added
+        gifWrap.removeChild(existingImg);
+      }
+      // Create img element w/ gif
+      gif.setAttribute('src', imgPath + '?q=' + Math.random());
+      gif.classList.add('lice-cap-gif');
+
+      gifWrap.appendChild(gif);
+    });
+  };
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "fed-tooling-slideshow",
+  "authors": [
+    "rdgd <ryan.is.gray@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "WTFPL",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "impress.js": "^0.5.3"
+  }
+}
