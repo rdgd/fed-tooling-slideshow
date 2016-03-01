@@ -8,3 +8,5 @@ intended for students.
 
 1. Install [Node](https://nodejs.org/en/download/)
 2. Open your terminal and enter `npm install -g bower`
+3. Clone the repository and `cd` to project root
+4. Run `bower install`
