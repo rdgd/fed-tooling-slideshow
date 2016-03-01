@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1024" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>NodeJS</title>
+  <title>Node, NPM, Grunt, and Bower</title>
 
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />
@@ -40,32 +40,13 @@
       </p>
     </div>
 
-    <div class="step slide" data-x="0" data-y="-1500">
-      <h1>
-        The point of it all
-      </h1>
-      The advent of Node and the maturation of Javascript as a language and
-      its community is:
-      <ul>
-        <li>
-          Making front-end development more interesting, fun, and efficient
-        </li>
-        <li>
-          Providing front-end-specific package/dependency management where there once was none
-        </li>
-        <li>
-          Encouraging layered architecture
-        </li>
-      </ul>
-    </div>
-
     <div class="step slide" data-x="1000" data-y="-1500">
       <h1>
         This presentation is NOT
       </h1>
       <ul>
         <li>Suggesting we use JS to do Java or Ruby's jobs</li>
-        <li>About JS running on an application server at all</li>
+        <li>About JS running on an application server, as a server-side scripting language, at all</li>
         <li>Me trying to convert you to JS evangelists</li>
       </ul>
     </div>
@@ -75,7 +56,7 @@
         This presentation IS
       </h1>
       <ul>
-        <li>Hoping to ignite some curiousity about JS</li>
+        <li>Hoping to ignite some curiousity about JS and modern front-end development</li>
         <li>
           Five parts
           <ol>
@@ -104,10 +85,10 @@
       </h1>
       <ul>
         <li>
-          Adaptable to changes in the rest of the stack
+          We have the tech to facilitate discreet front-end apps
         </li>
         <li>
-          We have the technology/tooling to facilitate this
+          Keep server side language OUT of the view
         </li>
         <li>
           Don't burden front-end devs or your future selves
@@ -120,6 +101,9 @@
             </li>
             <li>
               A fundamental, technological separation of presentation and application layers' concerns
+            </li>
+            <li>
+              Adaptability to changes in the rest of the stack
             </li>
           </ul>
         </li>
@@ -152,10 +136,7 @@
           Non-blocking I/O
         </li>
         <li>
-          Uses <a href="https://github.com/libuv/libuv" title="libuv">libuv</a> under the hood which manages queueing, the event loop, workers, thread pooling, mem alloc, etc...
-        </li>
-        <li>
-          Includes NPM
+          Uses <a href="https://github.com/libuv/libuv" title="libuv">libuv</a> under the hood which manages queueing, the event loop, workers, thread pooling, etc...
         </li>
         <li>
           Checkout the <a href="https://nodejs.org/en/" title="Node JS">NodeJS</a> website
@@ -205,6 +186,9 @@
           <strong>N</strong>ode <strong>P</strong>ackage <strong>M</strong>anager
         </li>
         <li>
+          package.json manifests
+        </li>
+        <li>
           Uses
           <a href="https://github.com/npm/node-semver" title="SemVer parser">
             SemVer
@@ -215,7 +199,6 @@
           <a href="https://www.npmjs.com/" title="NPM">NPM</a> hosts the world's largest repository of modules, in any language
           <ul>
             <li>Filesystem traversal & manipulation</li>
-            <li>Executing shell scripts & commands</li>
             <li>Web application frameworks</li>
             <li>Webservers, process managers, load balancers, etc...</li>
           </ul>
@@ -235,11 +218,6 @@
       <h1>
         Local Packages
       </h1>
-      <ul>
-        <li>
-          Installs sub-dependencies flat until conflict, then nests
-        </li>
-      </ul>
       <div class="lice-cap-wrap">
       </div>
     </div>
@@ -249,8 +227,12 @@
         Dependency Injection
       </h1>
       <ul>
-        <li>Node knows to look in node_modules directory</li>
-        <li>You can also specify a path to a file</li>
+        <li>
+          Node knows to look in node_modules directory
+        </li>
+        <li>
+          Installs sub-dependencies flat until conflict, then nests
+        </li>
       </ul>
       <div class="lice-cap-wrap">
       </div>
@@ -341,7 +323,7 @@
           Built on Node
         </li>
         <li>
-          Package manifest
+          bower.json manifest
         </li>
         <li>
           Distinct from NPM
